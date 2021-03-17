@@ -298,6 +298,23 @@ KMEM-DAX mode are subject to the regular memory placement policies of the Linux 
 This is not the case if the FS-DAX mode is used, because in that mode the application’s
 PMem access pattern is totally opaque to the operating system as managing the heap backed
 by PMem is entirely done in the user space. 
+                          
+| Platform                     | Config 1:DRAM                                                             | Config 2:PMem                                                                                           |
+|------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| Motherboard                  | Intel X11DPU                                                              | Intel X11DPU                                                                                            |
+| CPU                          | 2x Intel(R) Xeon(R) Gold 5215M CPU 40C @2.50GHz                           | 2x Intel(R) Xeon(R) Gold 5215M CPU 40C @2.50GHz                                                         |
+| Cores/Socket, Threads/socket | 10, 20                                                                    | 10, 20                                                                                                  |
+| uCode                        | 0x500002c                                                                 | 0x500002c                                                                                               |
+| HT                           | ON                                                                        | ON                                                                                                      |
+| Turbo                        | ON                                                                        | ON                                                                                                      |
+| System memory                | 768GB DDR4 2666MHz 6x Micron 72ASS8G72LZ-2G6D2 64GB DIMMs in both sockets | 768GB DDR4 2666MHz 6x Micron 72ASS8G72LZ-2G6D2 64GB DIMMs in both sockets                               |
+| Persistent Memory            | N/A                                                                       | 1536GB Intel Optane DC PMM 2666MHz 6x Intel NMA1XXD128GPS 128GB DIMMs in both sockets with interleaving |
+| BIOS                         | 3.1                                                                       | 3.1                                                                                                     |
+| Intel PMem Firmware          | 01.02.00.5355                                                             | 01.02.00.5355                                                                                           |
+| BIOS                         | 3.1                                                                       | 3.1                                                                                                     |
+| Optane mode                  | N/A                                                                       | AppDirect volatile - FS DAX                                                                             |
+| Network                      | Solarflare SFC9220 40Gbit/s Assigned to NUMA Node 1                       | Solarflare SFC9220 40Gbit/s Assigned to NUMA Node 1                                                     |
+| DCPMM Profile                | N/A                                                                       | N/A                                                                                                     |
 
 ## Summary
 
